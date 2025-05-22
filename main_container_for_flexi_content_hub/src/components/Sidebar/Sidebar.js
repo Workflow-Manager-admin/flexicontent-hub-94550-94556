@@ -1,15 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useAppContext } from '../../context/AppContext';
 import './Sidebar.css';
 
 /**
  * Sidebar navigation component for FlexiContent Hub
  * 
- * @param {Object} props - Component props
- * @param {boolean} props.collapsed - Whether the sidebar is collapsed
  * @returns {JSX.Element} Rendered Sidebar component
  */
-const Sidebar = ({ collapsed }) => {
+const Sidebar = () => {
+  const { sidebarCollapsed } = useAppContext();
+  
   // Navigation menu items
   const menuItems = [
     { icon: '📊', label: 'Dashboard', path: '/dashboard' },
@@ -20,7 +21,7 @@ const Sidebar = ({ collapsed }) => {
   ];
 
   return (
-    <aside className={`flexi-sidebar ${collapsed ? 'collapsed' : ''}`}>
+    <aside className={`flexi-sidebar ${sidebarCollapsed ? 'collapsed' : ''}`}>
       <div className="sidebar-content">
         <nav className="sidebar-nav">
           <ul className="sidebar-menu">
@@ -33,14 +34,14 @@ const Sidebar = ({ collapsed }) => {
                   }
                 >
                   <span className="sidebar-icon">{item.icon}</span>
-                  {!collapsed && <span className="sidebar-label">{item.label}</span>}
+                  {!sidebarCollapsed && <span className="sidebar-label">{item.label}</span>}
                 </NavLink>
               </li>
             ))}
           </ul>
         </nav>
         <div className="sidebar-footer">
-          {!collapsed && (
+          {!sidebarCollapsed && (
             <>
               <div className="sidebar-footer-item">
                 <span className="sidebar-footer-icon">?</span>
