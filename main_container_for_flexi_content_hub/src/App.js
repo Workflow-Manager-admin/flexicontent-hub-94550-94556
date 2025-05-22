@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import FlexiContentHub from './components/FlexiContentHub/FlexiContentHub';
+import { AppProvider } from './context/AppContext';
 
 /**
  * Main App component that renders the FlexiContentHub CMS
@@ -10,7 +11,9 @@ import FlexiContentHub from './components/FlexiContentHub/FlexiContentHub';
 function App() {
   return (
     <div className="app">
-      <FlexiContentHub />
+      <AppProvider>
+        <FlexiContentHub />
+      </AppProvider>
     </div>
   );
 }
