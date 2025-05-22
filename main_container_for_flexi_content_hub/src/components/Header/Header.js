@@ -1,19 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useAppContext } from '../../context/AppContext';
 import './Header.css';
 
 /**
  * Header component for FlexiContent Hub
  * 
- * @param {Object} props - Component props
- * @param {Function} props.onMenuClick - Function to toggle sidebar visibility
  * @returns {JSX.Element} Rendered Header component
  */
-const Header = ({ onMenuClick }) => {
+const Header = () => {
+  const { toggleSidebar, user } = useAppContext();
+
   return (
     <header className="flexi-header">
       <div className="flexi-header-left">
-        <button className="menu-toggle" onClick={onMenuClick}>
+        <button className="menu-toggle" onClick={toggleSidebar}>
           <span className="menu-icon">≡</span>
         </button>
         <Link to="/" className="flexi-logo">
@@ -33,9 +34,9 @@ const Header = ({ onMenuClick }) => {
           <span className="action-text">New Content</span>
         </button>
         <div className="user-menu">
-          <div className="user-avatar">KA</div>
+          <div className="user-avatar">{user.avatar}</div>
           <div className="user-dropdown">
-            <span className="user-name">Admin</span>
+            <span className="user-name">{user.name}</span>
             <span className="dropdown-icon">▼</span>
           </div>
         </div>
