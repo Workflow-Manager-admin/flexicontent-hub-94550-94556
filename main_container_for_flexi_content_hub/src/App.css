@@ -4,6 +4,20 @@
   --text-color: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.7);
   --border-color: rgba(255, 255, 255, 0.1);
+  
+  /* Additional FlexiContent Hub variables */
+  --content-bg: #f7f9fc;
+  --card-bg: #ffffff;
+  --text-primary-dark: #2d3748;
+  --text-secondary-dark: #718096;
+  --border-light: #e5e9f2;
+  --hover-light: #f0f4f8;
+  --success: #38A169;
+  --success-light: #C6F6D5;
+  --warning: #DD6B20;
+  --warning-light: #FEEBC8;
+  --info: #3182CE;
+  --info-light: #BEE3F8;
 }
 
 body {
