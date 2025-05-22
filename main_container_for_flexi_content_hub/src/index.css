@@ -11,6 +11,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--content-bg, #f7f9fc);
+  color: var(--text-primary-dark, #2d3748);
+  height: 100vh;
+  overflow: hidden;
 }
 
 code {
