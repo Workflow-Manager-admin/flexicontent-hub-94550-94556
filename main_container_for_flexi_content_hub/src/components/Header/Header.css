@@ -1,0 +1,136 @@
+/* Header styling */
+.flexi-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--kavia-dark);
+  color: var(--text-color);
+  padding: 0 16px;
+  height: 64px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+/* Left section with logo and menu toggle */
+.flexi-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.menu-toggle {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 8px;
+  margin-right: 8px;
+}
+
+.flexi-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.logo-symbol {
+  color: var(--kavia-orange);
+  margin-right: 8px;
+}
+
+/* Middle section with search */
+.flexi-header-middle {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 4px 12px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.search-bar input {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  padding: 8px;
+  flex: 1;
+  outline: none;
+}
+
+.search-bar input::placeholder {
+  color: var(--text-secondary);
+}
+
+.search-button {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+/* Right section with actions and user menu */
+.flexi-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-action-btn {
+  display: flex;
+  align-items: center;
+  background-color: var(--kavia-orange);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 8px 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.action-icon {
+  margin-right: 8px;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.user-avatar {
+  background: var(--kavia-orange);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+.user-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.user-name {
+  margin-right: 4px;
+}
+
+.dropdown-icon {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
