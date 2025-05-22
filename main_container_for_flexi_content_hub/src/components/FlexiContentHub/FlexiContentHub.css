@@ -1,0 +1,40 @@
+/* Main container styles */
+.flexi-content-hub {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f7f9fc;
+  color: #333;
+}
+
+/* Main content area layout */
+.flexi-content-main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Content area styling */
+.flexi-content-area {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  transition: margin-left 0.3s ease;
+}
+
+.flexi-content-area.expanded {
+  margin-left: 0;
+}
+
+/* Placeholder content styling */
+.content-placeholder {
+  background-color: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.content-placeholder h2 {
+  color: var(--kavia-orange);
+  margin-top: 0;
+}
