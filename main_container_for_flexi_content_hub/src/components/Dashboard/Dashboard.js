@@ -1,4 +1,5 @@
 import React from 'react';
+import { useAppContext } from '../../context/AppContext';
 import './Dashboard.css';
 
 /**
@@ -9,12 +10,14 @@ import './Dashboard.css';
  * @returns {JSX.Element} Rendered Dashboard component
  */
 const Dashboard = () => {
-  // Sample data for dashboard metrics
+  const { contentStats } = useAppContext();
+  
+  // Dashboard metrics using context data
   const metrics = [
-    { label: 'Published Content', value: '24', icon: '📄' },
-    { label: 'Draft Content', value: '8', icon: '✏️' },
-    { label: 'Media Files', value: '67', icon: '🖼️' },
-    { label: 'Active Users', value: '12', icon: '👥' }
+    { label: 'Published Content', value: contentStats.published.toString(), icon: '📄' },
+    { label: 'Draft Content', value: contentStats.draft.toString(), icon: '✏️' },
+    { label: 'Media Files', value: contentStats.media.toString(), icon: '🖼️' },
+    { label: 'Active Users', value: contentStats.users.toString(), icon: '👥' }
   ];
 
   // Sample recent content data
