@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Header from '../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
 import Dashboard from '../Dashboard/Dashboard';
+import { useAppContext } from '../../context/AppContext';
 import './FlexiContentHub.css';
 
 /**
@@ -14,19 +15,14 @@ import './FlexiContentHub.css';
  * @returns {JSX.Element} The rendered FlexiContentHub container
  */
 const FlexiContentHub = () => {
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  
-  // Toggle sidebar collapsed state
-  const toggleSidebar = () => {
-    setSidebarCollapsed(!sidebarCollapsed);
-  };
+  const { sidebarCollapsed } = useAppContext();
 
   return (
     <Router>
       <div className="flexi-content-hub">
-        <Header onMenuClick={toggleSidebar} />
+        <Header />
         <div className="flexi-content-main">
-          <Sidebar collapsed={sidebarCollapsed} />
+          <Sidebar />
           <div className={`flexi-content-area ${sidebarCollapsed ? 'expanded' : ''}`}>
             <Routes>
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
