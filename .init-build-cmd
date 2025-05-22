@@ -1,0 +1,4 @@
+{
+    "command": "npm install && npx tsc --noEmit && npm test -- --ci",
+    "working_directory": "/home/kavia/workspace/code-generation/flexicontent-hub-94550-94556/main_container_for_flexi_content_hub"
+}
